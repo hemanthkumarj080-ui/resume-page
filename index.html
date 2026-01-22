@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hemanth Kumar J | Resume</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f1f5f9;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            object-fit: cover;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 38px;
+            font-weight: 600;
+            color: #e0f2fe;
+        }
+
+        header h3 {
+            margin-top: 8px;
+            font-weight: 400;
+            color: #bae6fd;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        button {
+            padding: 12px 26px;
+            margin: 8px;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #22d3ee, #6366f1);
+            color: #020617;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(34, 211, 238, 0.35);
+        }
+
+        .section {
+            display: none;
+            background: rgba(15, 23, 42, 0.6);
+            margin: 25px auto;
+            padding: 25px;
+            width: 85%;
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .section.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: #7dd3fc;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .edu-title {
+            cursor: pointer;
+            padding: 12px;
+            background: rgba(56, 189, 248, 0.15);
+            border-radius: 10px;
+            margin-top: 12px;
+            font-weight: 500;
+            color: #e0f2fe;
+            transition: background 0.3s ease;
+        }
+
+        .edu-title:hover {
+            background: rgba(99, 102, 241, 0.3);
+        }
+
+        .edu-details {
+            display: none;
+            margin-left: 15px;
+            margin-top: 8px;
+            color: #cbd5f5;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(2, 6, 23, 0.7);
+            font-size: 14px;
+            color: #94a3b8;
+        }
+    </style>
+
+    <script>
+        function showSection(id) {
+            let sections = document.getElementsByClassName("section");
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("show");
+                sections[i].style.display = "none";
+            }
+
+            let activeSection = document.getElementById(id);
+            activeSection.style.display = "block";
+
+            setTimeout(() => {
+                activeSection.classList.add("show");
+            }, 10);
+        }
+
+        function toggleEdu(id) {
+            let allDetails = document.getElementsByClassName("edu-details");
+            for (let i = 0; i < allDetails.length; i++) {
+                allDetails[i].style.display = "none";
+            }
+            document.getElementById(id).style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <img src="profile.jpg" alt="Profile Photo">
+    <div>
+        <h1>Hemanth Kumar J</h1>
+        <h3>BCA Student | Python | Java | AI & ML</h3>
+    </div>
+</header>
+
+<div class="buttons">
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('education')">Education</button>
+    <button onclick="showSection('contact')">Contact</button>
+</div>
+
+<div id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I am a Bachelor of Computer Applications (BCA) student with an interest in
+        programming, artificial intelligence, and machine learning. I enjoy learning
+        new technologies and applying them through practical experience.
+    </p>
+    <p>
+        Currently working as an intern at IMTDA Infotech Private Limited and looking
+        forward to growing as a software professional.
+    </p>
+</div>
+
+<div id="skills" class="section">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python (Beginner)</li>
+        <li>Java Programming</li>
+        <li>C Programming</li>
+        <li>AI & Machine Learning (Basics)</li>
+        <li>Git & GitHub</li>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+    </ul>
+</div>
+
+<div id="education" class="section">
+    <h2>Education</h2>
+
+    <p class="edu-title" onclick="toggleEdu('bca')">Bachelor of Computer Applications (BCA)</p>
+    <div id="bca" class="edu-details">
+        <p><b>CGPA:</b> 7.0</p>
+        <p>Indus Valley Degree College, KR Puram</p>
+        <p>Bangalore North University</p>
+    </div>
+
+    <p class="edu-title" onclick="toggleEdu('puc')">PUC</p>
+    <div id="puc" class="edu-details">
+        <p><b>Percentage:</b> 50%</p>
+        <p>DR Academy PU College, Katigenahalli, Malur</p>
+    </div>
+
+    <p class="edu-title" onclick="toggleEdu('sslc')">SSLC</p>
+    <div id="sslc" class="edu-details">
+        <p><b>Percentage:</b> 70%</p>
+        <p>Narayana Olympiad School</p>
+    </div>
+</div>
+
+<div id="contact" class="section">
+    <h2>Contact Details</h2>
+    <p><strong>Email:</strong> hemanthkumarj080@gmail.com</p>
+    <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/hemanth-kumar-b801903a7" target="_blank">
+            hemanth-kumar-b801903a7
+        </a>
+    </p>
+    <p><strong>GitHub:</strong> hemanthkumarj080</p>
+</div>
+
+<footer>
+    Currently working as an intern at IMTDA Infotech Private Limited
+</footer>
+<footer>
+    © 2026 | Hemanth Kumar J
+</footer>
+
+</body>
+</html>
